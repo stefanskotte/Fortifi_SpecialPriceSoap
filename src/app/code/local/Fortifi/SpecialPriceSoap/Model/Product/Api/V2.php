@@ -1,0 +1,4 @@
+<?php
+class Fortifi_SpecialPriceSoap_Model_Product_Api_V2 extends Fortifi_SpecialPriceSoap_Model_Product_Api
+{
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+  <api>
+    <resources>
+      <specialpricesoap_product translate="title" module="specialpricesoap">
+        <model>specialpricesoap/product_api</model>
+        <title>Fortifi Special Price API</title>
+        <acl>specialpricesoap/product</acl>
+        <methods>
+          <update translate="title" module="specialpricesoap">
+            <title>Array of products to set special price for</title>
+          </update>
+        </methods>
+      </specialpricesoap_product>
+    </resources>
+    <resources_alias>
+      <product>specialpricesoap_product</product>
+    </resources_alias>
+    <v2>
+      <resources_function_prefix>
+         <product>catalogMassProductSetSpecialPrice</product>
+      </resources_function_prefix>
+    </v2>
+    <acl>
+      <resources>
+        <specialpricesoap translate="title" module="specialpricesoap">
+          <title>Special price Mass Update API</title>
+          <sort_order>5</sort_order>
+          <product translate="title" module="specialpricesoap">
+            <title>Allow mass update of prices</title>
+          </product>
+        </specialpricesoap>
+      </resources>
+    </acl>
+  </api>
+</config>

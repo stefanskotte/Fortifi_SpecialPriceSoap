@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Fortifi_SpecialPriceSoap>
+            <version>1.0.0</version>
+        </Fortifi_SpecialPriceSoap>
+    </modules>
+    <global>
+        <models>
+            <specialpricesoap>
+                <class>Fortifi_SpecialPriceSoap_Model</class>
+            </specialpricesoap>
+        </models>
+        <helpers>
+            <specialpricesoap>
+                <class>Fortifi_SpecialPriceSoap_Helper</class>
+            </specialpricesoap>
+        </helpers>
+    </global>
+</config>

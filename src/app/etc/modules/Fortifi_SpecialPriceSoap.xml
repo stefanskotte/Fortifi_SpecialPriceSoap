@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Fortifi_SpecialPriceSoap>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends></depends>
+        </Fortifi_SpecialPriceSoap>
+    </modules>
+</config>
