@@ -24,10 +24,10 @@
     </v2>
     <acl>
       <resources>
-        <product translate="title" module="specialpricesoap_product">
+        <product translate="title" module="specialpricesoap">
           <title>Special price Mass Update API</title>
           <sort_order>5</sort_order>
-          <api translate="title" module="specialpricesoap_product">
+          <api translate="title" module="specialpricesoap">
             <title>Allow mass update of prices</title>
           </api>
         </product>

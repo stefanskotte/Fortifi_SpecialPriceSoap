@@ -1,74 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions xmlns:typens="urn:{{var wsdl.name}}"
-             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-             name="{{var wsdl.name}}"
-             targetNamespace="urn:{{var wsdl.name}}">
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  name="{{var wsdl.name}}"
+                  targetNamespace="urn:{{var wsdl.name}}">
     <wsdl:types>
-      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:{{var wsdl.name}}">
-      <!-- initial update request -->
-      <xsd:element name="catalogMassProductSetSpecialPriceUpdateRequestParam">
-      <xsd:complexType>
-          <xsd:sequence>
-              <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
-              <xsd:element minOccurs="1" maxOccurs="unbounded" name="productsData" type="typens:catalogProductSpecialPriceEntityArray" />
-          </xsd:sequence>
-      </xsd:complexType>
-      </xsd:element>
-      <!-- output result string (ok/fail) response -->
-      <xsd:element name="catalogMassProductSetSpecialPriceUpdateResponseParam">
-          <xsd:complexType>
-              <xsd:sequence>
-                  <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:string" />
-              </xsd:sequence>
-          </xsd:complexType>
-      </xsd:element>
-      <!-- input array for calling update method -->
-      <xsd:complexType name="catalogProductSpecialPriceEntity">
-          <xsd:sequence>
-              <xsd:element name="sku" type="xsd:string" minOccurs="1"/>
-              <xsd:element name="specialPrice" type="xsd:string" minOccurs="1"/>
-              <xsd:element name="fromDate" type="xsd:string" minOccurs="0"/>
-              <xsd:element name="toDate" type="xsd:string" minOccurs="0"/>
-              <xsd:element name="store" type="xsd:string" minOccurs="0"/>
-          </xsd:sequence>
-      </xsd:complexType>
-      <xsd:complexType name="catalogProductSpecialPriceEntityArray">
-          <xsd:sequence>
-              <xsd:element minOccurs="1" maxOccurs="unbounded" name="complexObjectArray" type="typens:catalogProductSpecialPriceEntity" />
-          </xsd:sequence>
-      </xsd:complexType>
-    </xsd:schema>
-  </wsdl:types>
-  <wsdl:message name="catalogMassProductSetSpecialPriceUpdateRequest">
-      <wsdl:part name="parameters" element="typens:catalogMassProductSetSpecialPriceUpdateRequestParam" />
-  </wsdl:message>
-  <wsdl:message name="catalogMassProductSetSpecialPriceUpdateResponse">
-      <wsdl:part name="parameters" element="typens:catalogMassProductSetSpecialPriceUpdateResponseParam" />
-  </wsdl:message>
-  <wsdl:portType name="{{var wsdl.handler}}PortType">
-      <wsdl:operation name="catalogMassProductSetSpecialPriceUpdate">
-        <wsdl:documentation>Special price mass update</wsdl:documentation>
-        <wsdl:input message="typens:catalogMassProductSetSpecialPriceUpdateRequest" />
-        <wsdl:output message="typens:catalogMassProductSetSpecialPriceUpdateResponse" />
-      </wsdl:operation>
-    </wsdl:portType>    
-  <wsdl:binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="catalogMassProductSetSpecialPriceUpdate">
-      <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
-      <wsdl:input>
-        <soap:body namespace="urn:{{var wsdl.name}}" literal="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body namespace="urn:{{var wsdl.name}}" literal="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:service name="{{var wsdl.name}}Service">
-    <wsdl:port name="{{var wsdl.handler}}Port" binding="typens:{{var wsdl.handler}}Binding">
-      <soap:address location="{{var wsdl.url}}" />
-    </wsdl:port>
-  </wsdl:service>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:{{var wsdl.name}}">
+            <!-- initial update request -->
+            <xsd:element name="catalogMassProductSetSpecialPriceUpdateRequestParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="sessionId" type="xsd:string" />
+                        <xsd:element minOccurs="1" maxOccurs="unbounded" name="productsData" type="typens:catalogProductSpecialPriceEntityArray" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <!-- output result string (ok/fail) response -->
+            <xsd:element name="catalogMassProductSetSpecialPriceUpdateResponseParam">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="result" type="xsd:string" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <!-- input array for calling update method -->
+            <xsd:complexType name="catalogProductSpecialPriceEntity">
+                <xsd:sequence>
+                    <xsd:element name="sku" type="xsd:string" minOccurs="1"/>
+                    <xsd:element name="specialPrice" type="xsd:string" minOccurs="1"/>
+                    <xsd:element name="fromDate" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="toDate" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="store" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="catalogProductSpecialPriceEntityArray">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" maxOccurs="unbounded" name="complexObjectArray" type="typens:catalogProductSpecialPriceEntity" />
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="catalogMassProductSetSpecialPriceUpdateRequest">
+        <wsdl:part name="parameters" element="typens:catalogMassProductSetSpecialPriceUpdateRequestParam" />
+    </wsdl:message>
+    <wsdl:message name="catalogMassProductSetSpecialPriceUpdateResponse">
+        <wsdl:part name="parameters" element="typens:catalogMassProductSetSpecialPriceUpdateResponseParam" />
+    </wsdl:message>
+    <wsdl:portType name="{{var wsdl.handler}}PortType">
+        <wsdl:operation name="catalogMassProductSetSpecialPriceUpdate">
+            <wsdl:documentation>Special price mass update</wsdl:documentation>
+            <wsdl:input message="typens:catalogMassProductSetSpecialPriceUpdateRequest" />
+            <wsdl:output message="typens:catalogMassProductSetSpecialPriceUpdateResponse" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="catalogMassProductSetSpecialPriceUpdate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <wsdl:input>
+                <soap:body namespace="urn:{{var wsdl.name}}" literal="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body namespace="urn:{{var wsdl.name}}" literal="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="{{var wsdl.name}}Service">
+        <wsdl:port name="{{var wsdl.handler}}Port" binding="typens:{{var wsdl.handler}}Binding">
+            <soap:address location="{{var wsdl.url}}" />
+        </wsdl:port>
+    </wsdl:service>
 </wsdl:definitions>
