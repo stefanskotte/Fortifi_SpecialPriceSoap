@@ -2,34 +2,35 @@
 <config>
   <api>
     <resources>
-      <specialpricesoap_product translate="title" module="specialpricesoap">
+      <binding translate="title" module="specialpricesoap_product">
         <model>specialpricesoap/product_api</model>
         <title>Fortifi Special Price API</title>
-        <acl>specialpricesoap/product</acl>
+        <acl>product/api</acl>
         <methods>
-          <update translate="title" module="specialpricesoap">
+          <update translate="title" module="specialpricesoap_product">
             <title>Array of products to set special price for</title>
+            <method>updateSpecialPrices</method>
           </update>
         </methods>
-      </specialpricesoap_product>
+      </binding>
     </resources>
     <resources_alias>
-      <product>specialpricesoap_product</product>
+      <specialpricesoap_product>binding</specialpricesoap_product>
     </resources_alias>
     <v2>
       <resources_function_prefix>
-         <product>catalogMassProductSetSpecialPrice</product>
+         <binding>catalogMassProductSetSpecialPrice</binding>
       </resources_function_prefix>
     </v2>
     <acl>
       <resources>
-        <specialpricesoap translate="title" module="specialpricesoap">
+        <product translate="title" module="specialpricesoap_product">
           <title>Special price Mass Update API</title>
           <sort_order>5</sort_order>
-          <product translate="title" module="specialpricesoap">
+          <api translate="title" module="specialpricesoap_product">
             <title>Allow mass update of prices</title>
-          </product>
-        </specialpricesoap>
+          </api>
+        </product>
       </resources>
     </acl>
   </api>

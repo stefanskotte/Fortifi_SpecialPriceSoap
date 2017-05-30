@@ -2,7 +2,7 @@
 
 class Fortifi_SpecialPriceSoap_Model_Product_Api extends Mage_Api_Model_Resource_Abstract
 {
-    public function update($productsData = array()):q
+    public function updateSpecialPrices($productsData = array())
     {
         //Mage::log("hit setSpecialPrices soap call");
 
