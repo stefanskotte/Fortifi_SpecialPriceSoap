@@ -15,7 +15,7 @@ class Fortifi_SpecialPriceSoap_Model_Product_Api extends Mage_Api_Model_Resource
 
             if ($id != "") {
 
-                if ($product->store != "") {
+                if (isset($product->store)) {
                     $storeId = $product->store;
                 }
 

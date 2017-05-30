@@ -8,7 +8,6 @@
                   targetNamespace="urn:{{var wsdl.name}}">
     <wsdl:types>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:{{var wsdl.name}}">
-            <!-- initial update request -->
             <xsd:element name="catalogMassProductSetSpecialPriceUpdateRequestParam">
                 <xsd:complexType>
                     <xsd:sequence>
@@ -17,7 +16,6 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <!-- output result string (ok/fail) response -->
             <xsd:element name="catalogMassProductSetSpecialPriceUpdateResponseParam">
                 <xsd:complexType>
                     <xsd:sequence>
@@ -25,7 +23,6 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <!-- input array for calling update method -->
             <xsd:complexType name="catalogProductSpecialPriceEntity">
                 <xsd:sequence>
                     <xsd:element name="sku" type="xsd:string" minOccurs="1"/>
