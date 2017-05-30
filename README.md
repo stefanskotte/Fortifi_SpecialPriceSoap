@@ -1,2 +1,6 @@
 # Fortifi_SpecialPriceSoap
-Module for extending Magento with a mass specialprice call
+WS-I Compliant SOAP extension for supporting mass updates on special prices
+
+Tested under Magento EE 1.14
+
+
